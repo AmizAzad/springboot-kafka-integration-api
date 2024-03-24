@@ -59,11 +59,11 @@ Topic: topicdemo        TopicId: I79rWedSRuuTI_XvtGDbRg PartitionCount: 1       
 
 ### GitHub Notes:
 
-When checking into a new remote repository, the remote repository URL needs to be set in your local repository. This can be done using the below command:
+When checking into a new remote repository, the remote repository URL needs to be set in your local repository. This can be done using the below command:  
 `git remote add origin <repository_url>`
 
-Check your Git remote: Ensure that your Git remote is correctly set to the repository you want to push to. You can check your remote repositories using:
+Check your Git remote: Ensure that your Git remote is correctly set to the repository you want to push to. You can check your remote repositories using:  
 `git remote -v`
 
-If the remote is incorrect, you can update it using:
+If the remote is incorrect, you can update it using:  
 `git remote set-url origin <repository_url>`

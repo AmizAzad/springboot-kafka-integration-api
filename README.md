@@ -1,22 +1,22 @@
 # springboot-kafka-integration-api
 This project consists of 2 API endpoint URLs to consume input data, write it to a Kafka topic (producer) and subsequently other service will read it from Kafka topic (consumer).
 
-####Endpoints:
-1. http://localhost:8080/api/v1/kafka/publish
-Method: POST
-Request Body:
-`{
-    "id": 101,
-    "firstName": "Lara",
-    "lastName": "Croft"
-}`
-Response:
-Json message sent to Kafka topic
+#### Endpoints:
+1. http://localhost:8080/api/v1/kafka/publish  
+Method: POST  
+Request Body:  
+`{  
+    "id": 101,  
+    "firstName": "Lara",  
+    "lastName": "Croft"  
+}`  
+Response:  
+Json message sent to Kafka topic  
 
-2. http://localhost:8080/api/v1/kafka/publish?message=Message via Query Arg
-Method: GET
-Response:
-Message sent to the topic
+2. http://localhost:8080/api/v1/kafka/publish?message=Message via Query Arg  
+Method: GET  
+Response:  
+Message sent to the topic  
 
 ----------------
 
@@ -27,8 +27,8 @@ Message sent to the topic
 
 #### Starting the Kafka Server / Broker. Default port is 9092. In server.properties, make sure to update the below properties:
 > 1. listeners=PLAINTEXT://0.0.0.0:9092
-2. advertised.listeners=PLAINTEXT://localhost:9092
-3. listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+> 2. advertised.listeners=PLAINTEXT://localhost:9092
+> 3. listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
 
 `bin\windows\kafka-server-start.bat config\server.properties`
 
@@ -45,8 +45,8 @@ Message sent to the topic
 `bin\windows\kafka-topics.sh --describe --topic topicdemo --bootstrap-server localhost:9092`
 
 ##### Describe command output sample
->C:\kafka_2.12-3.7.0>bin\windows\kafka-topics.bat --describe --topic topicdemo --bootstrap-server localhost:9092
-Topic: topicdemo        TopicId: I79rWedSRuuTI_XvtGDbRg PartitionCount: 1       ReplicationFactor: 1    Configs:
+>C:\kafka_2.12-3.7.0>bin\windows\kafka-topics.bat --describe --topic topicdemo --bootstrap-server localhost:9092  
+Topic: topicdemo        TopicId: I79rWedSRuuTI_XvtGDbRg PartitionCount: 1       ReplicationFactor: 1    Configs:  
         Topic: topicdemo        Partition: 0    Leader: 0       Replicas: 0     Isr: 0
 
 #### Create a Kafka Producer to write messages into a Topic.
